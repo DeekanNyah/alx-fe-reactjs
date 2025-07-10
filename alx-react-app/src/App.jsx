@@ -1,14 +1,11 @@
-import { useState } from 'react';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
 
-import UserProfile from './components/UserProfile';
 import Header from './components/Header';
 import MainContent from './components/MainContent';
 import Footer from './components/Footer';
-
-import myImage from './assets/img11.jpg';
+import UserProfile from './components/UserProfile';
 
 function App() {
   return (
@@ -22,17 +19,17 @@ function App() {
         </a>
       </div>
 
-      {/* User Profile Card */}
+      {/* 👤 Introduce yourself first */}
       <UserProfile
         name="Deekan"
         age={28}
         bio="I love gaming, exploring new tech, and photography."
-        image={myImage}
       />
 
-      {/* Cities you love section (Task 2) */}
+      {/* 🏙️ Then talk about the places you love */}
       <Header />
       <MainContent />
+
       <Footer />
     </>
   );
