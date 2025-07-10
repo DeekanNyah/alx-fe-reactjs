@@ -21,9 +21,9 @@ function App() {
 
       {/* 👤 Introduce yourself first */}
       <UserProfile
-        name="Deekan"
-        age={28}
-        bio="I love gaming, exploring new tech, and photography."
+        name="Alice"
+        age={25}
+        bio="Loves hiking and photography."
       />
 
       {/* 🏙️ Then talk about the places you love */}
