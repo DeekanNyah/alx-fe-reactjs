@@ -1,7 +1,4 @@
 import UserInfo from './UserInfo';
 
-function ProfilePage() {
-  return <UserInfo />;
-}
-
+const ProfilePage = () => <UserInfo />;
 export default ProfilePage;
