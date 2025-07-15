@@ -1,4 +1,7 @@
-import UserProfile from './components/UserProfile';
+import UserDetails from './UserDetails';
 
-const UserInfo = () => <UserProfile />;
+function UserInfo() {
+  return <UserDetails />;
+}
+
 export default UserInfo;
