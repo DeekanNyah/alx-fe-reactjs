@@ -1,12 +1,16 @@
 import React from 'react';
-import WelcomeMessage from './components/WelcomeMessage';
+import Header from './components/Header';
+import UserProfile from './components/UserProfile';
+import MainContent from './components/MainContent';
+import Footer from './components/Footer';
 
 function App() {
   return (
     <div>
-      <h1>Welcome to My React App</h1>
-      <p>This is a paragraph below the heading.</p>
-      <WelcomeMessage />
+      <Header />
+      <UserProfile name="Edikan" age={23} bio="Frontend dev based in Nigeria." />
+      <MainContent />
+      <Footer />
     </div>
   );
 }
