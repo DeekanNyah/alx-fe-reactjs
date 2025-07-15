@@ -1,5 +1,3 @@
-import React from 'react';
-
 function UserProfile(props) {
   return (
     <div style={{ border: '1px solid gray', padding: '10px', margin: '10px' }}>
