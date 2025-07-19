@@ -1,11 +1,11 @@
+// src/components/WelcomeMessage.jsx
+import { useContext } from 'react';
+import { UserContext } from '../context/UserContext';
+
 function WelcomeMessage() {
-  return (
-    <div>
-      <h1>Hello everyone, I am learning React at ALX!</h1>
-      <p>This is a simple JSX component.</p>
-      <p>I am learning about JSX!</p>
-    </div>
-  );
+  const { user } = useContext(UserContext);
+
+  return <h2>Hello, {user.name}! 👋</h2>;
 }
 
 export default WelcomeMessage;

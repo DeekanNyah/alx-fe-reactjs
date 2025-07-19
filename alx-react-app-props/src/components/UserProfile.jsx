@@ -1,16 +1,17 @@
+// src/components/UserProfile.jsx
 import { useContext } from 'react';
-import UserContext from '../UserContext';
+import { UserContext } from '../context/UserContext';
 
-const UserProfile = () => {
-  const user = useContext(UserContext);
+function UserProfile() {
+  const { user } = useContext(UserContext);
 
   return (
-    <div>
-      <h2>{user.name}</h2>
-      <p>Age: {user.age}</p>
-      <p>Bio: {user.bio}</p>
-    </div>
+    <section>
+      <h3>User Profile</h3>
+      <p><strong>Name:</strong> {user.name}</p>
+      <p><strong>Email:</strong> {user.email}</p>
+    </section>
   );
-};
+}
 
 export default UserProfile;

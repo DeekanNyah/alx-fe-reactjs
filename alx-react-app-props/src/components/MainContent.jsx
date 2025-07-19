@@ -1,7 +1,12 @@
+// src/components/MainContent.jsx
+import WelcomeMessage from './WelcomeMessage';
+import UserProfile from './UserProfile';
+
 function MainContent() {
   return (
     <main>
-      <p>I love to visit New York, Paris, and Tokyo.</p>
+      <WelcomeMessage />
+      <UserProfile />
     </main>
   );
 }
