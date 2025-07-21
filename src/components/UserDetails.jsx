@@ -1,11 +1,8 @@
-// src/components/UserDetails.jsx
-import React from 'react';
-
-function UserDetails({ age, location }) {
+function UserDetails({ userData }) {
   return (
     <div>
-      <p>Age: {age}</p>
-      <p>Location: {location}</p>
+      <p>Name: {userData.name}</p>
+      <p>Email: {userData.email}</p>
     </div>
   );
 }

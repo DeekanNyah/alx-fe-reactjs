@@ -1,13 +1,7 @@
-// src/components/UserInfo.jsx
-import React from 'react';
+import UserDetails from './UserDetails';
 
-function UserInfo({ name, email }) {
-  return (
-    <div>
-      <h2>{name}</h2>
-      <p>{email}</p>
-    </div>
-  );
+function UserInfo({ userData }) {
+  return <UserDetails userData={userData} />;
 }
 
 export default UserInfo;
