@@ -1,15 +1,16 @@
 // src/components/recipeStore.js
+
 import { create } from 'zustand';
 
 export const useRecipeStore = create((set) => ({
   recipes: [],
   searchTerm: '',
-  addRecipe: (newRecipe) =>
-    set((state) => ({ recipes: [...state.recipes, newRecipe] })),
-  updateRecipe: (updatedRecipe) =>
+  addRecipe: (recipe) =>
+    set((state) => ({ recipes: [...state.recipes, recipe] })),
+  updateRecipe: (updated) =>
     set((state) => ({
       recipes: state.recipes.map((r) =>
-        r.id === updatedRecipe.id ? updatedRecipe : r
+        r.id === updated.id ? updated : r
       ),
     })),
   deleteRecipe: (id) =>
