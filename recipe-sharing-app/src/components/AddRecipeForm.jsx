@@ -1,38 +1,42 @@
-import { useState } from "react";
-import { useRecipeStore } from "../components/recipeStore";
+import React, { useState } from "react";
+import { useRecipeStore } from "./recipeStore";
 
 const AddRecipeForm = () => {
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
   const addRecipe = useRecipeStore((state) => state.addRecipe);
-
-  const [name, setName] = useState("");
-  const [ingredients, setIngredients] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (name && ingredients) {
-      addRecipe({ name, ingredients });
-      setName("");
-      setIngredients("");
+
+    if (title.trim() && description.trim()) {
+      addRecipe({ title, description });
+      setTitle("");
+      setDescription("");
     }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>Add Recipe</h2>
-      <input
-        type="text"
-        placeholder="Recipe Name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        required
-      />
-      <textarea
-        placeholder="Ingredients"
-        value={ingredients}
-        onChange={(e) => setIngredients(e.target.value)}
-        required
-      />
-      <button type="submit">Add</button>
+    <form onSubmit={handleSubmit} style={{ marginBottom: "20px" }}>
+      <h2>Add New Recipe</h2>
+      <div>
+        <input
+          type="text"
+          placeholder="Recipe Title"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)} // ✅ this line makes setTitle real
+          required
+        />
+      </div>
+      <div>
+        <textarea
+          placeholder="Recipe Description"
+          value={description}
+          onChange={(e) => setDescription(e.target.value)} // ✅ setDescription used
+          required
+        ></textarea>
+      </div>
+      <button type="submit">Add Recipe</button>
     </form>
   );
 };
