@@ -1,17 +1,21 @@
 // src/components/recipeStore.js
+
 import { create } from 'zustand';
 
 export const useRecipeStore = create((set) => ({
   recipes: [],
-  addRecipe: (newRecipe) => set((state) => ({
-    recipes: [...state.recipes, newRecipe]
-  })),
-  deleteRecipe: (id) => set((state) => ({
-    recipes: state.recipes.filter(recipe => recipe.id !== id)
-  })),
-  updateRecipe: (updated) => set((state) => ({
-    recipes: state.recipes.map(recipe =>
-      recipe.id === updated.id ? updated : recipe
-    )
-  })),
+  searchTerm: '',
+  addRecipe: (recipe) =>
+    set((state) => ({ recipes: [...state.recipes, recipe] })),
+  updateRecipe: (updated) =>
+    set((state) => ({
+      recipes: state.recipes.map((r) =>
+        r.id === updated.id ? updated : r
+      ),
+    })),
+  deleteRecipe: (id) =>
+    set((state) => ({
+      recipes: state.recipes.filter((r) => r.id !== id),
+    })),
+  setSearchTerm: (term) => set({ searchTerm: term }),
 }));
