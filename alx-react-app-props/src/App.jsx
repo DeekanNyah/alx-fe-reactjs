@@ -1,19 +1,9 @@
-// src/App.jsx
-import Header from './components/Header';
-import Footer from './components/Footer';
-import MainContent from './components/MainContent';
-import { UserProvider } from './context/UserContext';
+import ProfilePage from './components/ProfilePage';
 
 function App() {
-  return (
-    <UserProvider>
-      <div className="app">
-        <Header />
-        <MainContent />
-        <Footer />
-      </div>
-    </UserProvider>
-  );
+  const userData = { name: "Jane Doe", email: "jane.doe@example.com" };
+
+  return <ProfilePage userData={userData} />;
 }
 
 export default App;
