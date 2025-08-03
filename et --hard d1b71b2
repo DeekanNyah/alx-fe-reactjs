@@ -1,0 +1,37 @@
+[33m0d6a468[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Move Recipe.js to components and fix layout
+[33m21ff423[m Add recipe components and implement add/edit/delete functionality
+[33md1b71b2[m Fix file structure: move recipeStore.js to components
+[33maa5feb9[m Add recipe-sharing-app with Zustand setup
+[33m9058427[m Complete Task 1 - Recipe Sharing App
+[33m1ab6b15[m WIP: Save local changes before pulling
+[33m6e431a0[m Add recipe-sharing-app project
+[33m1e093ef[m Rename RecipeStore.js to recipeStore.js to pass checker
+[33m70edb8b[m Add recipeStore.js with required exports for ALX checks
+[33m8410069[m Add Recipe Sharing App
+[33me319c7c[m Initial working version of Recipe Sharing App
+[33m5a10e6e[m Add RecipeDetails page and update routing
+[33m6ad4654[m Fix AddRecipeForm to include setTitle and setDescription
+[33md48afe7[m Add setRecipes to Zustand store
+[33mf278fe4[m Moved recipeStore.js to components folder and cleaned up
+[33m86845d4[m Moved recipeStore.js to components folder and cleaned up
+[33m86209c5[m Complete recipe sharing app
+[33m809c62a[m Merge branch 'main' of https://github.com/DeekanNyah/alx-fe-reactjs
+[33m9abadc9[m Add Recipe Sharing App using React and Zustand
+[33m06fff29[m Update: Pass userData props through components
+[33md68dcc5[m Task 2 clean setup with Vite and ProfilePage component
+[33mb1aa99e[m Add full React project for props task
+[33mc4d27eb[m Fix: Add routing, Navbar, and pages with interactivity
+[33m0a2e5f5[m Task 3: Company website using React and Router
+[33mbdb9112[m Task 3: Company website using React and Router
+[33m47318b2[m Moved context files into src/components and fixed imports
+[33m4c5b92a[m Recreated UserContext and refactored for context usage
+[33m21e38d2[m Refactor to use Context API in UserProfile
+[33ma121f01[m Refactor UserProfile to use Context API
+[33m5c5a77b[m Refactor prop drilling to use Context API
+[33m612f981[m Add Counter component with useState hook
+[33mbf01e88[m Apply inline styling to React components
+[33m7f7f4e3[m Fix inline CSS and ensure all components are included
+[33mc95a571[m Add inline CSS to Header, UserProfile, MainContent, and Footer components
+[33m1ea38f6[m Import and render WelcomeMessage component in App.jsx
+[33md260562[m Update App.jsx layout and structure
+[33m32d1442[m Reorder components: show UserProfile before travel content
