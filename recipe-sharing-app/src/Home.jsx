@@ -1,7 +1,7 @@
 // src/Home.jsx
 import React from 'react';
 import RecipeList from './RecipeList';
-import SearchBar from './SearchBar';
+import SearchBar from './components/SearchBar';
 
 const Home = () => {
   return (

@@ -1,23 +1,40 @@
-// src/components/recipeStore.js
 import { create } from 'zustand';
-import { v4 as uuidv4 } from 'uuid';
 
 export const useRecipeStore = create((set) => ({
   recipes: [],
-  searchTerm: '',
-  setSearchTerm: (term) => set({ searchTerm: term }),
+  favorites: [],
+  searchQuery: '',
+  recommendations: [],
+
   addRecipe: (recipe) =>
     set((state) => ({
-      recipes: [...state.recipes, { ...recipe, id: uuidv4() }],
+      recipes: [...state.recipes, { ...recipe, id: Date.now().toString() }],
     })),
+
+  updateRecipe: (id, updated) =>
+    set((state) => ({
+      recipes: state.recipes.map((r) => (r.id === id ? { ...r, ...updated } : r)),
+    })),
+
   deleteRecipe: (id) =>
     set((state) => ({
-      recipes: state.recipes.filter((recipe) => recipe.id !== id),
+      recipes: state.recipes.filter((r) => r.id !== id),
+      favorites: state.favorites.filter((favId) => favId !== id),
     })),
-  editRecipe: (updatedRecipe) =>
+
+  setSearchQuery: (query) => set({ searchQuery: query }),
+
+  toggleFavorite: (id) =>
     set((state) => ({
-      recipes: state.recipes.map((recipe) =>
-        recipe.id === updatedRecipe.id ? updatedRecipe : recipe
-      ),
+      favorites: state.favorites.includes(id)
+        ? state.favorites.filter((favId) => favId !== id)
+        : [...state.favorites, id],
+    })),
+
+  generateRecommendations: () =>
+    set((state) => ({
+      recommendations: state.recipes
+        .filter((r) => !state.favorites.includes(r.id))
+        .slice(0, 3),
     })),
 }));

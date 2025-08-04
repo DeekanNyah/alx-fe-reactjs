@@ -1,33 +1,34 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useRecipeStore } from './recipeStore';
-import { useNavigate } from 'react-router-dom';
+import { v4 as uuidv4 } from 'uuid';
 
 const AddRecipeForm = () => {
   const [title, setTitle] = useState('');
-  const [description, setDescription] = useState('');
+  const [ingredients, setIngredients] = useState('');
   const addRecipe = useRecipeStore((state) => state.addRecipe);
-  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addRecipe({ title, description });
-    navigate('/');
+    if (title && ingredients) {
+      addRecipe({ id: uuidv4(), title, ingredients });
+      setTitle('');
+      setIngredients('');
+    }
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <input
+        type="text"
+        placeholder="Recipe title"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
-        placeholder="Title"
-        required
       />
       <textarea
-        value={description}
-        onChange={(e) => setDescription(e.target.value)}
-        placeholder="Description"
-        required
-      />
+        placeholder="Ingredients"
+        value={ingredients}
+        onChange={(e) => setIngredients(e.target.value)}
+      ></textarea>
       <button type="submit">Add Recipe</button>
     </form>
   );
