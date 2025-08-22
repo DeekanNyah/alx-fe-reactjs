@@ -4,11 +4,8 @@ import FormikForm from "./components/FormikForm";
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-100 p-6">
-      {/* Controlled Components version */}
+    <div className="min-h-screen bg-gray-100 p-6 space-y-10">
       <RegistrationForm />
-
-      {/* Formik version */}
       <FormikForm />
     </div>
   );

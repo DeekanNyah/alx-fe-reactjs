@@ -39,11 +39,7 @@ const FormikForm = () => {
                 placeholder="Username"
                 className="w-full border rounded-lg p-2"
               />
-              <ErrorMessage
-                name="username"
-                component="div"
-                className="text-red-500 text-sm"
-              />
+              <ErrorMessage name="username" component="div" className="text-red-500 text-sm" />
             </div>
 
             <div>
@@ -53,11 +49,7 @@ const FormikForm = () => {
                 placeholder="Email"
                 className="w-full border rounded-lg p-2"
               />
-              <ErrorMessage
-                name="email"
-                component="div"
-                className="text-red-500 text-sm"
-              />
+              <ErrorMessage name="email" component="div" className="text-red-500 text-sm" />
             </div>
 
             <div>
@@ -67,11 +59,7 @@ const FormikForm = () => {
                 placeholder="Password"
                 className="w-full border rounded-lg p-2"
               />
-              <ErrorMessage
-                name="password"
-                component="div"
-                className="text-red-500 text-sm"
-              />
+              <ErrorMessage name="password" component="div" className="text-red-500 text-sm" />
             </div>
 
             <button
