@@ -1,12 +1,14 @@
 import React from "react";
 import RegistrationForm from "./components/RegistrationForm";
-import FormikForm from "./components/FormikForm";
+import FormikForm from "./components/formikForm";  // ✅ must match lowercase f
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-100 p-6 space-y-10">
+    <div className="p-6">
       <RegistrationForm />
-      <FormikForm />
+      <div className="mt-10">
+        <FormikForm />
+      </div>
     </div>
   );
 }
