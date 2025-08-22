@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";   // <-- add this
+import { Link } from "react-router-dom";
 
 const HomePage = () => {
   const [recipes, setRecipes] = useState([]);
@@ -17,6 +17,16 @@ const HomePage = () => {
         Recipe Sharing Platform
       </h1>
 
+      {/* ✅ Add New Recipe Button */}
+      <div className="text-center mb-6">
+        <Link
+          to="/add-recipe"
+          className="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition"
+        >
+          + Add New Recipe
+        </Link>
+      </div>
+
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {recipes.map((recipe) => (
           <div
@@ -32,7 +42,6 @@ const HomePage = () => {
               <h2 className="text-xl font-semibold mb-2">{recipe.title}</h2>
               <p className="text-gray-600">{recipe.summary}</p>
 
-              {/* Use Link instead of button */}
               <Link
                 to={`/recipe/${recipe.id}`}
                 className="mt-3 inline-block text-indigo-600 hover:underline"
