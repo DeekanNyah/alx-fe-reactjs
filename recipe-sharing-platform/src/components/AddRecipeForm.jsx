@@ -12,7 +12,6 @@ const AddRecipeForm = ({ onAddRecipe }) => {
     if (!ingredients.trim()) {
       newErrors.ingredients = "Ingredients are required.";
     } else {
-      // Check at least 2 items
       const items = ingredients.split(",").map((i) => i.trim()).filter(Boolean);
       if (items.length < 2) {
         newErrors.ingredients = "Please include at least 2 ingredients.";
@@ -28,7 +27,7 @@ const AddRecipeForm = ({ onAddRecipe }) => {
     e.preventDefault();
     if (validateForm()) {
       const newRecipe = {
-        id: Date.now(), // temporary ID
+        id: Date.now(),
         title,
         ingredients: ingredients.split(",").map((i) => i.trim()),
         steps,
@@ -42,11 +41,13 @@ const AddRecipeForm = ({ onAddRecipe }) => {
   };
 
   return (
-    <div className="max-w-2xl mx-auto bg-white shadow-lg rounded-2xl p-6 mt-8">
-      <h2 className="text-2xl font-bold mb-4 text-center">Add a New Recipe</h2>
-      <form onSubmit={handleSubmit} className="space-y-4">
+    <div className="max-w-3xl mx-auto bg-white shadow-lg rounded-2xl p-6 mt-8">
+      <h2 className="text-2xl font-bold mb-6 text-center">Add a New Recipe</h2>
+      
+      {/* ✅ make the form responsive using md:grid-cols-2 */}
+      <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Title */}
-        <div>
+        <div className="md:col-span-2">
           <label className="block text-gray-700 font-medium mb-1">
             Recipe Title
           </label>
@@ -63,14 +64,14 @@ const AddRecipeForm = ({ onAddRecipe }) => {
         {/* Ingredients */}
         <div>
           <label className="block text-gray-700 font-medium mb-1">
-            Ingredients (separated by commas)
+            Ingredients (comma separated)
           </label>
           <textarea
             value={ingredients}
             onChange={(e) => setIngredients(e.target.value)}
             className="w-full border border-gray-300 rounded-lg p-2 focus:ring-2 focus:ring-indigo-400"
             placeholder="e.g. flour, sugar, eggs"
-            rows="3"
+            rows="5"
           ></textarea>
           {errors.ingredients && (
             <p className="text-red-500 text-sm">{errors.ingredients}</p>
@@ -92,8 +93,8 @@ const AddRecipeForm = ({ onAddRecipe }) => {
           {errors.steps && <p className="text-red-500 text-sm">{errors.steps}</p>}
         </div>
 
-        {/* Submit */}
-        <div className="text-center">
+        {/* Submit button spans both columns */}
+        <div className="md:col-span-2 text-center">
           <button
             type="submit"
             className="bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 transition"
