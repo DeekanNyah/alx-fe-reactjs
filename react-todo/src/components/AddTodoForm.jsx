@@ -5,17 +5,16 @@ const AddTodoForm = ({ addTodo }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (inputValue.trim() !== "") {
-      addTodo(inputValue);
-      setInputValue("");
-    }
+    if (inputValue.trim() === "") return;
+    addTodo(inputValue.trim());
+    setInputValue("");
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <input
         type="text"
-        placeholder="Add a new todo"   // ✅ matches the test
+        placeholder="Add a new todo"
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
       />
